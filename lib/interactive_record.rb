@@ -82,8 +82,7 @@ class InteractiveRecord
     value_name = attribute.values[0]
     binding.pry
     
-    sql = <<-SQL
-      "SELECT * FROM #{table_name
+    sql = "SELECT * FROM #{table_name} WHERE column_name = (?)", 
   end 
  
     
