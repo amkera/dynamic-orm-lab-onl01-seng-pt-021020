@@ -60,7 +60,6 @@ class InteractiveRecord
     end 
     #The above code, however, will result in a values array. We need comma separated values for our SQL statement. Let's join this array into a string:
     values.join(", ")
-    binding.pry
   end 
     
   
