@@ -77,7 +77,7 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end 
   
-  def find_by(attribute)
+  def self.find_by(attribute)
     self
     binding.pry
   end 
