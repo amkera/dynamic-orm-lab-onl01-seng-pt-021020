@@ -77,7 +77,11 @@ class InteractiveRecord
     DB[:conn].execute(sql, name)
   end 
   
-  def find_by
+  def find_by(attribute)
+    if attribute == 'name'
+      sql = "SELECT * FROM #{self.table_name} WHERE name = ?"
+      DB[:conn].execute(sql, name)
+    elsif attribute == 'grade'
   end 
  
     
