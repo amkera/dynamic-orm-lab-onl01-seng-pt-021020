@@ -78,6 +78,7 @@ class InteractiveRecord
   end 
   
   def find_by(attribute)
+    self
     binding.pry
   end 
  
