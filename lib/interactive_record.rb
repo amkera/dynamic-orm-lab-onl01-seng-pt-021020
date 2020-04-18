@@ -58,7 +58,7 @@ class InteractiveRecord
     self.class.column_names.each do |column_name|
       values << "'#{send(column_name)}'" unless send(column_name).nil?
     end 
-    #The above code, however, will result in a values array
+    #The above code, however, will result in a values array. We need comma separated values for our SQL statement. Let's join this array into a string:
     values.join(", ")
     binding.pry
   end 
