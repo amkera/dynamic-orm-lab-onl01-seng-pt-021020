@@ -58,6 +58,7 @@ class InteractiveRecord
     self.class.column_names.each do |column_name|
       values << "'#{send(column_name)}'" unless send(column_name).nil?
     end 
+    #The above code, however, will result in a values array
     values.join(", ")
     binding.pry
   end 
