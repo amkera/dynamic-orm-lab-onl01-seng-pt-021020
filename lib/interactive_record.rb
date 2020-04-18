@@ -64,7 +64,7 @@ class InteractiveRecord
   
   def save
     #save the student to the database 
-    DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (?)", [values_for_insert]
+    DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (?)", [values_for_insert])
     
     #("INSERT INTO students (name, grade) VALUES (?, ?)", "johnny", 9)
     
