@@ -79,7 +79,6 @@ class InteractiveRecord
   
   def self.find_by(attribute)
     column_name = attribute.keys[0].to_s
-    self
     binding.pry
   end 
  
