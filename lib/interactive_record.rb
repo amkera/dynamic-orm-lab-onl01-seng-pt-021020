@@ -47,7 +47,19 @@ class InteractiveRecord
     #
   end 
   
+  #We already know that the names of that attr_accessor methods were derived from the column names of the table associated to our class. Those column names are stored in the #column_names class method.
+  #If only there was some way to invoke those methods, without naming them explicitly, and capture their return values...
+  #In fact, we already know how to programmatically invoke a method, without knowing the exact name of the method, using the #send method.
+  #Let's iterate over the column names stored in #column_names and use the #send method with each individual column name to invoke the method by that same name and capture the return value:
+  
   def values_for_insert
+    values = []
+    self.class.column_names.each do |column_name|
+      values << "'#{send(col_name)}'" unless send(col_name).nil?
+    end 
+    values.join(", ")
+    binding.pry
+  end 
     
   
  
