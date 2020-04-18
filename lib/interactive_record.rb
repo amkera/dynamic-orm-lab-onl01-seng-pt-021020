@@ -83,7 +83,7 @@ class InteractiveRecord
     binding.pry
     
     sql = <<-SQL
-      "SELECT * FROM #{insert_t
+      "SELECT * FROM #{table_name
   end 
  
     
