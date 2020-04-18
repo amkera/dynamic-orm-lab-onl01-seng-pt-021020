@@ -61,6 +61,15 @@ class InteractiveRecord
     #The above code, however, will result in a values array. We need comma separated values for our SQL statement. Let's join this array into a string:
     values.join(", ")
   end 
+  
+  def save
+    #save the student to the database 
+    DB[:conn].execute("INSERT INTO #{table_name_for_insert} (#{col_names_for_insert}) VALUES (?)", [values_for_insert]
+    
+    #("INSERT INTO students (name, grade) VALUES (?, ?)", "johnny", 9)
+    
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
+  end 
     
   
  
