@@ -81,6 +81,9 @@ class InteractiveRecord
     column_name = attribute.keys[0].to_s
     value_name = attribute.values[0]
     binding.pry
+    
+    sql = <<-SQL
+      "SELECT * FROM #{insert_t
   end 
  
     
